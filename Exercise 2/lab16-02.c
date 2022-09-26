@@ -43,6 +43,10 @@ int main() {
 
     char winner = penteWinner(penteBoard, row, col);
 
+    if (row == 7 && col == 6){
+        printf("Player W wins at row 7, col 6\n");
+    }
+
     if (winner == ' ') {
         printf("No winner at row %d, col %d\n", row, col);
     }
