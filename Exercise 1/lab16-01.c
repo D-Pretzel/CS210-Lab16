@@ -25,5 +25,4 @@ int main() {
     } else {
       printf("this square is not magic\n");
     }
-
 }

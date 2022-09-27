@@ -10,20 +10,25 @@ void print4SquareInt(int array[4][4]){
     }
 }
 
-bool hasUniqueElements4Square(int array[4][4]){
+bool hasUniqueElements4Square(int array[][4]){
+
     // Checks to make sure all values are unique
-    for (int i = 0; i < 4; i++){
-        for (int j = 0; j < 4; j++){
-            for (int k = 0; k < 4; k++){
-                for (int l = 0; l < 4; l++){
-                    if (array[i][j] == array[k][l] && i != k && j != l){
-                        return 0;
+    for (int i = 0; i < 4; i++){    // Row
+        for (int j = 0; j < 4; j++){    // Column`
+            int count = 0;
+            for (int k = 0; k < 4; k++){    // Row
+                for (int l = 0; l < 4; l++){    // Column
+                    if (array[i][j] == array[k][l] && i != k && j != l){    // If the value is the same as another value in the array
+                        count++;
                     }
                 }
             }
+            if (count > 1){    // If there are any duplicates
+                return false;
+            }
         }
     }
-    return 1;
+    return true;
 }
 
 // Checks to see if the 4x4 is a magic square
